@@ -141,6 +141,12 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/_ExcelImporter/ImportSpecifiers/Field</li>
+
+<li>$:/_ExcelImporter/ImportSpecifiers/Row</li>
+
+<li>$:/_ExcelImporter/ImportSpecifiers/Sheet</li>
+
 <li>$:/_ExcelImporter/ImportSpecifiers/Workbook</li>
 
 <li>$:/config/NewJournal/Title</li>
@@ -187,9 +193,19 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/edit/$:/_ExcelImporter/ImportSpecifiers/Row</li>
+
+<li>$:/state/edit/$:/_ExcelImporter/ImportSpecifiers/Sheet</li>
+
 <li>$:/state/edit/$:/_ExcelImporter/ImportSpecifiers/Workbook</li>
 
+<li>$:/state/expand/$:/_ExcelImporter/ImportSpecifiers/Row</li>
+
+<li>$:/state/expand/$:/_ExcelImporter/ImportSpecifiers/Sheet</li>
+
 <li>$:/state/expand/$:/_ExcelImporter/ImportSpecifiers/Workbook</li>
+
+<li>$:/state/plugin-info--1909267488-$:/plugins/tiddlywiki/xlsx-utils---1477676357</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/xlsx-utils</li>
 
@@ -247,10 +263,6 @@ Error message and password prompt
 
 <li>Mark Summary</li>
 
-<li>Mark-1,4</li>
-
-<li>Mark-1,5</li>
-
 <li>not working fields</li>
 
 <li>PROBLEMS</li>
@@ -260,6 +272,10 @@ Error message and password prompt
 <li>zMark-1,2</li>
 
 <li>zMark-1,3</li>
+
+<li>zMark-1,4</li>
+
+<li>zMark-1,5</li>
 
 </ul>
 </p>
@@ -275,7 +291,16 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div caption="New workbook" created="20210118123141924" import-spec-role="workbook" modified="20210118123141924" title="$:/_ExcelImporter/ImportSpecifiers/Workbook">
+<div created="20210427150138252" import-field-column="Column Name" import-field-name="fieldname" import-field-source="column" import-field-type="string" import-spec-role="field" modified="20210427150138252" title="$:/_ExcelImporter/ImportSpecifiers/Field">
+<pre></pre>
+</div>
+<div created="20210427150131953" import-spec-role="row" list="$:/_ExcelImporter/ImportSpecifiers/Field" modified="20210427150138253" title="$:/_ExcelImporter/ImportSpecifiers/Row">
+<pre></pre>
+</div>
+<div created="20210427150028848" import-sheet-name="Dead" import-spec-role="sheet" list="$:/_ExcelImporter/ImportSpecifiers/Row" modified="20210427150131954" title="$:/_ExcelImporter/ImportSpecifiers/Sheet">
+<pre></pre>
+</div>
+<div caption="Mark" created="20210118123141924" import-spec-role="workbook" list="$:/_ExcelImporter/ImportSpecifiers/Sheet" modified="20210427150028849" title="$:/_ExcelImporter/ImportSpecifiers/Workbook">
 <pre></pre>
 </div>
 <div created="20210414142607902" modified="20210414142950372" title="$:/config/NewJournal/Title">
@@ -10317,17 +10342,32 @@ Error message and password prompt
 <div created="20210118041926615" modified="20210414142447918" title="$:/SiteTitle">
 <pre>Epipotheo</pre>
 </div>
+<div created="20210427150131954" modified="20210427150131954" title="$:/state/edit/$:/_ExcelImporter/ImportSpecifiers/Row">
+<pre>yes</pre>
+</div>
+<div created="20210427150028850" modified="20210427150028850" title="$:/state/edit/$:/_ExcelImporter/ImportSpecifiers/Sheet">
+<pre>yes</pre>
+</div>
 <div created="20210118123141925" modified="20210118123141925" title="$:/state/edit/$:/_ExcelImporter/ImportSpecifiers/Workbook">
+<pre>yes</pre>
+</div>
+<div created="20210427150131954" modified="20210427150131954" title="$:/state/expand/$:/_ExcelImporter/ImportSpecifiers/Row">
+<pre>yes</pre>
+</div>
+<div created="20210427150028850" modified="20210427150028850" title="$:/state/expand/$:/_ExcelImporter/ImportSpecifiers/Sheet">
 <pre>yes</pre>
 </div>
 <div created="20210118123141925" modified="20210118123141925" title="$:/state/expand/$:/_ExcelImporter/ImportSpecifiers/Workbook">
 <pre>yes</pre>
 </div>
+<div created="20210427150126355" modified="20210427150149823" title="$:/state/plugin-info--1909267488-$:/plugins/tiddlywiki/xlsx-utils---1477676357">
+<pre>readme</pre>
+</div>
 <div created="20210118043314680" modified="20210118043314680" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/xlsx-utils">
 <pre>yes</pre>
 </div>
-<div created="20210118043318494" modified="20210118123255224" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/xlsx-utils---1816764222">
-<pre>controls</pre>
+<div created="20210118043318494" modified="20210427150111592" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/xlsx-utils---1816764222">
+<pre>readme</pre>
 </div>
 <div created="20210415080748172" modified="20210425140436943" title="$:/state/showeditpreview">
 <pre>yes</pre>
@@ -10356,8 +10396,8 @@ Error message and password prompt
 <div created="20210427144345308" modified="20210427144352842" title="$:/state/tab-1316036395">
 <pre>$:/core/ui/TiddlerInfo/Fields</pre>
 </div>
-<div created="20210118042010678" modified="20210427143702983" title="$:/state/tab-1749438307">
-<pre>$:/plugins/tiddlywiki/xlsx-utils/controls</pre>
+<div created="20210118042010678" modified="20210427150108867" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20210118042030403" modified="20210427143700055" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/Gitea</pre>
@@ -10365,8 +10405,8 @@ Error message and password prompt
 <div created="20210414141817239" modified="20210427123945434" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210118131130231" modified="20210427123943940" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20210118131130231" modified="20210427150319965" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Tools</pre>
 </div>
 <div created="20210425142436689" modified="20210425142438899" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
@@ -10374,7 +10414,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210427143355413" list="zMark-1,1 zMark-1,2 zMark-1,3 Mark-1,4 Mark-1,5 $:/ControlPanel" modified="20210427145910583" title="$:/StoryList">
+<div created="20210427143355413" list="$:/ControlPanel $:/plugins/tiddlywiki/xlsx-utils" modified="20210427150124279" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10572,26 +10612,6 @@ Verses of Mark I HAVE read = &lt;$count filter=&quot;[tag[Mark]tag[Read]]&quot;/
 
 </pre>
 </div>
-<div created="20210426143942729" modified="20210427143517260" tags="Mark Mark-1" title="Mark-1,4">
-<pre>---
-
-This messenger was John the Baptist. He was in the wilderness and preached that people should be baptized to show that they had repented of their sins and turned to God to be forgiven.
-
----
-
-&lt;$checkbox tag=&quot;Read&quot;&gt; Read it?&lt;/$checkbox&gt;
-</pre>
-</div>
-<div created="20210426144533953" modified="20210427143515334" tags="Mark Mark-1" title="Mark-1,5">
-<pre>---
-
-All of Judea, including all the people of Jerusalem, went out to see and hear John. And when they confessed their sins, he baptized them in the Jordan River.
-
----
-
-&lt;$checkbox tag=&quot;Read&quot;&gt; Read it?&lt;/$checkbox&gt;
-</pre>
-</div>
 <div created="20210425144937227" modified="20210427143407791" tags="" title="not working fields">
 <pre>test &lt;$count filter=&quot;[untagged[]!is[system]] -[tags[]]&quot;/&gt;
 
@@ -10669,6 +10689,26 @@ It began just as the prophet Isaiah had written: “Look, I am sending my messen
 <pre>---
 
 He is a voice shouting in the wilderness, ‘Prepare the way for the Lord’s coming! Clear the road for him!”
+
+---
+
+&lt;$checkbox tag=&quot;Read&quot;&gt; Read it?&lt;/$checkbox&gt;
+</pre>
+</div>
+<div created="20210426143942729" modified="20210427145933124" tags="Mark Mark-1" title="zMark-1,4">
+<pre>---
+
+This messenger was John the Baptist. He was in the wilderness and preached that people should be baptized to show that they had repented of their sins and turned to God to be forgiven.
+
+---
+
+&lt;$checkbox tag=&quot;Read&quot;&gt; Read it?&lt;/$checkbox&gt;
+</pre>
+</div>
+<div created="20210426144533953" modified="20210427145939068" tags="Mark Mark-1" title="zMark-1,5">
+<pre>---
+
+All of Judea, including all the people of Jerusalem, went out to see and hear John. And when they confessed their sins, he baptized them in the Jordan River.
 
 ---
 
