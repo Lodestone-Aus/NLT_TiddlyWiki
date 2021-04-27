@@ -199,6 +199,8 @@ Error message and password prompt
 
 <li>$:/state/sidebar</li>
 
+<li>$:/state/tab--1708325585</li>
+
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--2112689675</li>
@@ -238,6 +240,8 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth</li>
 
 <li>A Summary of Mark</li>
+
+<li>Draft of '$:/TagManager'</li>
 
 <li>List of OT Books</li>
 
@@ -10331,6 +10335,9 @@ Error message and password prompt
 <div created="20210425142351476" modified="20210425142356877" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
+<div created="20210427123859891" modified="20210427123904105" title="$:/state/tab--1708325585">
+<pre>$:/core/ui/TiddlerInfo/Advanced</pre>
+</div>
 <div created="20210425142331956" modified="20210425142442124" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
@@ -10352,11 +10359,11 @@ Error message and password prompt
 <div created="20210118042030403" modified="20210118042030403" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210414141817239" modified="20210414152652832" title="$:/state/tab/moresidebar-1850697562">
+<div created="20210414141817239" modified="20210427123945434" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20210118131130231" modified="20210427123712498" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Tools</pre>
+<div created="20210118131130231" modified="20210427123943940" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20210425142436689" modified="20210425142438899" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
@@ -10364,7 +10371,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210427123729038" list="[[not working fields]]" modified="20210427123729038" title="$:/StoryList">
+<div created="20210427123729038" list="[[not working fields]] [[Mark Summary]] [[A Summary of Mark]] [[Draft of '$:/TagManager']]" modified="20210427123957889" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10497,6 +10504,96 @@ Error message and password prompt
 &lt;$list filter=&quot;[tag[Mark]]&quot;&gt;
 </pre>
 </div>
+<div color="#bbb" draft.of="$:/TagManager" draft.title="$:/TagManager" icon="$:/core/images/tag-button" modified="20210427123908899" title="Draft of '$:/TagManager'">
+<pre>\define lingo-base() $:/language/TagManager/
+\define iconEditorTab(type)
+\whitespace trim
+&lt;$link to=&quot;&quot;&gt;&lt;&lt;lingo Icons/None&gt;&gt;&lt;/$link&gt;
+&lt;$list filter=&quot;[all[shadows+tiddlers]is[image]] [all[shadows+tiddlers]tag[$:/tags/Image]] -[type[application/pdf]] +[sort[title]] +[$type$is[system]]&quot;&gt;
+&lt;$link to={{!!title}}&gt;
+&lt;$transclude/&gt; &lt;$view field=&quot;title&quot;/&gt;
+&lt;/$link&gt;
+&lt;/$list&gt;
+\end
+\define iconEditor(title)
+\whitespace trim
+&lt;div class=&quot;tc-drop-down-wrapper&quot;&gt;
+&lt;$button popupTitle={{{ [[$:/state/popup/icon/]addsuffix&lt;__title__&gt;] }}} class=&quot;tc-btn-invisible tc-btn-dropdown&quot;&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt;
+&lt;$reveal stateTitle={{{ [[$:/state/popup/icon/]addsuffix&lt;__title__&gt;] }}} type=&quot;popup&quot; position=&quot;belowleft&quot; text=&quot;&quot; default=&quot;&quot;&gt;
+&lt;div class=&quot;tc-drop-down&quot;&gt;
+&lt;$linkcatcher actions=&quot;&quot;&quot;&lt;$action-setfield $tiddler=&lt;&lt;__title__&gt;&gt; icon=&lt;&lt;navigateTo&gt;&gt;/&gt;&quot;&quot;&quot;&gt;
+&lt;&lt;iconEditorTab type:&quot;!&quot;&gt;&gt;
+&lt;hr/&gt;
+&lt;&lt;iconEditorTab type:&quot;&quot;&gt;&gt;
+&lt;/$linkcatcher&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+&lt;/div&gt;
+\end
+\define toggleButton(state)
+\whitespace trim
+&lt;$reveal stateTitle=&lt;&lt;__state__&gt;&gt; type=&quot;match&quot; text=&quot;closed&quot; default=&quot;closed&quot;&gt;
+&lt;$button setTitle=&lt;&lt;__state__&gt;&gt; setTo=&quot;open&quot; class=&quot;tc-btn-invisible tc-btn-dropdown&quot; selectedClass=&quot;tc-selected&quot;&gt;
+{{$:/core/images/info-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal stateTitle=&lt;&lt;__state__&gt;&gt; type=&quot;match&quot; text=&quot;open&quot; default=&quot;closed&quot;&gt;
+&lt;$button setTitle=&lt;&lt;__state__&gt;&gt; setTo=&quot;closed&quot; class=&quot;tc-btn-invisible tc-btn-dropdown&quot; selectedClass=&quot;tc-selected&quot;&gt;
+{{$:/core/images/info-button}}
+&lt;/$button&gt;
+&lt;/$reveal&gt;
+\end
+\whitespace trim
+&lt;table class=&quot;tc-tag-manager-table&quot;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;&lt;lingo Colour/Heading&gt;&gt;&lt;/th&gt;
+&lt;th class=&quot;tc-tag-manager-tag&quot;&gt;&lt;&lt;lingo Tag/Heading&gt;&gt;&lt;/th&gt;
+&lt;th&gt;&lt;&lt;lingo Count/Heading&gt;&gt;&lt;/th&gt;
+&lt;th&gt;&lt;&lt;lingo Icon/Heading&gt;&gt;&lt;/th&gt;
+&lt;th&gt;&lt;&lt;lingo Info/Heading&gt;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;$list filter=&quot;[tags[]!is[system]sort[title]]&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;$edit-text field=&quot;color&quot; tag=&quot;input&quot; type=&quot;color&quot;/&gt;&lt;/td&gt;
+&lt;td&gt;{{||$:/core/ui/TagTemplate}}&lt;/td&gt;
+&lt;td&gt;&lt;$count filter=&quot;[all[current]tagging[]]&quot;/&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;$macrocall $name=&quot;iconEditor&quot; title={{!!title}}/&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;$macrocall $name=&quot;toggleButton&quot; state={{{ [[$:/state/tag-manager/]addsuffix&lt;currentTiddler&gt;] }}} /&gt; 
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td colspan=&quot;4&quot;&gt;
+&lt;$reveal stateTitle={{{ [[$:/state/tag-manager/]addsuffix&lt;currentTiddler&gt;] }}} type=&quot;match&quot; text=&quot;open&quot; default=&quot;&quot;&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&lt;lingo Colour/Heading&gt;&gt;&lt;/td&gt;&lt;td&gt;&lt;$edit-text field=&quot;color&quot; tag=&quot;input&quot; type=&quot;text&quot; size=&quot;9&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&lt;lingo Icon/Heading&gt;&gt;&lt;/td&gt;&lt;td&gt;&lt;$edit-text field=&quot;icon&quot; tag=&quot;input&quot; size=&quot;45&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/$reveal&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/$list&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&quot;position:relative;&quot;&gt;
+{{$:/core/ui/UntaggedTemplate}}
+&lt;/td&gt;
+&lt;td&gt;
+&lt;small class=&quot;tc-menu-list-count&quot;&gt;&lt;$count filter=&quot;[untagged[]!is[system]] -[tags[]]&quot;/&gt;&lt;/small&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+</div>
 <div created="20210425133233357" modified="20210425133255197" tags="" title="List of OT Books">
 <pre>* Genesis 
 * Exodus
@@ -10580,8 +10677,13 @@ He is a voice shouting in the wilderness, ‘Prepare the way for the Lord’s co
 <div created="20210426144533953" modified="20210426144549789" tags="Mark Mark-1" title="Mark-1,5">
 <pre>All of Judea, including all the people of Jerusalem, went out to see and hear John. And when they confessed their sins, he baptized them in the Jordan River.</pre>
 </div>
-<div created="20210425144937227" modified="20210427123822370" tags="" title="not working fields">
-<pre>Verses of Mark I HAVE read = IT IS WORKING
+<div created="20210425144937227" modified="20210427124010738" tags="" title="not working fields">
+<pre>
+&lt;$count filter=&quot;[untagged[]!is[system]] -[tags[]]&quot;/&gt;
+
+----
+
+Verses of Mark I HAVE read = IT IS WORKING
 
 &lt;&lt;list-links &quot;[tag[Mark]tag[Read]count[]]&gt;&gt; 
 
